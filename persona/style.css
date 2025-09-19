@@ -1,0 +1,397 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #121212; /* Cor de fundo de fallback */  
+  color: #f0f0f0;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+
+header {
+  background-color: #000;
+  padding: 20px;
+  display: flex;  
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  color: #E10600;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.logo span {
+  color: white;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li a {
+  color: #f0f0f0;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+nav ul li a:hover {
+  color: #E10600;
+}
+
+
+.hero {
+  position: relative;
+  background-image: url('./img/Autodromo.jpg'); /* Caminho da imagem */
+  background-position: top center; /* Centraliza no topo */
+  background-repeat: no-repeat; /* Impede repetição */
+  background-size: cover; /* A imagem cobre toda a área */
+  height: 300px; /* Altura do header */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #ff0000; /* Cor do texto */
+  padding: 20px;
+  margin: 0; /* Remove margens extras */
+}
+
+/* Overlay (camada sobre a imagem de fundo) */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.0.); /* Cor preta com 50% de opacidade */
+  z-index: 1; /* Coloca o overlay acima da imagem, mas abaixo do conteúdo */
+}
+
+/* Conteúdo sobre o header */
+.hero-content {
+  position: relative;
+  z-index: 2; /* Coloca o conteúdo acima do overlay */
+}
+
+.hero-content h1 {
+  font-size: 50px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.hero-content p {
+  font-size: 20px;
+  font-weight: 300;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 colunas fixas */
+  gap: 40px; /* Espaçamento entre os quadrados */
+  padding: 40px;
+  background-color: #121212;
+}
+
+/* Estilo para cada quadrado */
+.topic {
+  background-color: #fff;
+  border: 2px solid #ccc;
+  border-radius: 12px; /* Bordas mais arredondadas */
+  padding: 40px;
+  text-align: center;
+  box-sizing: border-box; /* Para incluir o padding no tamanho total */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 300px; /* Garantir que o quadrado tenha altura fixa */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Efeito de hover para os quadrados */
+.topic:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo da imagem */
+.topic img {
+  width: 120px; /* Tamanho maior para as logos */
+  height: 120px;
+  object-fit: contain;
+  margin-bottom: 20px; /* Maior espaçamento entre imagem e nome */
+}
+
+/* Estilo do nome da equipe */
+.topic h3 {
+  font-size: 24px; /* Aumenta o tamanho do nome */
+  color: #333;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .content {
+    grid-template-columns: 1fr; /* Em telas pequenas, 1 coluna */
+  }
+  
+  .topic {
+    height: auto; /* A altura pode ser adaptada */
+    padding: 20px; /* Menos padding em telas pequenas */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.news {
+  flex: 2;
+  background-color: #1e1e1e;
+  border-radius: 8px;
+}
+
+.news article {
+  margin-bottom: 30px;
+}
+
+.news article h2 {
+  font-size: 1.8rem;
+  color: #E10600;
+  margin-bottom: 10px;
+}
+
+.news article p {
+  color: #ccc;
+}
+
+.sidebar {
+  flex: 1;
+  background-color: #1e1e1e;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.sidebar h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #E10600;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar ul li {
+  margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+  color: #f0f0f0;
+  text-decoration: none;
+}
+
+.sidebar ul li a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  background-color: #000;
+  color: #777;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    margin: 20px;
+  }
+
+  .hero {
+    height: 250px;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+}
+
+
+
+
+
+
+.videos {
+  padding: 40px 20px;
+  background-color: #111;
+  color: #fff;
+  text-align: center;
+}
+
+.videos h2 {
+  font-size: 36px;
+  margin-bottom: 30px;
+  color: #ff0000; /* amarelo */
+}
+
+/* Contêiner para as setas e vídeos */
+.video-container-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Estilo das setas de navegação */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  font-size: 32px;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 2;
+  transition: background-color 0.3s ease;
+}
+
+.arrow:hover {
+  background-color: #f1c40f;
+}
+
+.left-arrow {
+  left: 20px;
+}
+
+.right-arrow {
+  right: 20px;
+}
+
+/* Container de vídeos rolável */
+.video-container {
+  display: flex;
+  overflow-x: hidden;  /* Impede rolagem livre */
+  gap: 20px;
+  padding: 10px 0;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Estilo dos iframes para vídeos */
+.video-container iframe {
+  flex: 0 0 auto;
+  width: 300px;
+  height: 170px;
+  border-radius: 8px;
+  border: none;
+  box-shadow: 0 4px 15px rgba(255, 0, 0, 0.4);
+  transition: transform 0.3s ease;
+  scroll-snap-align: start;
+}
+
+.video-container iframe:hover {
+  transform: scale(1.01);
+}
+
+
+
+
+/* Estilo geral da galeria */
+.photos {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: #f5f5f5;
+}
+
+.photos h2 {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+/* Grid de fotos */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsivo */
+  gap: 20px; /* Espaçamento entre as imagens */
+  justify-items: center; /* Centraliza as imagens dentro do grid */
+}
+
+/* Estilo de cada item da foto */
+.photo-item {
+  position: relative;
+  overflow: hidden; /* Garante que a imagem não ultrapasse os limites do contêiner */
+  border-radius: 8px; /* Bordas arredondadas */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efeito de zoom nas fotos */
+.photo-item:hover {
+  transform: scale(1.05); /* Amplia a imagem ao passar o mouse */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Aumenta a sombra */
+}
+
+/* Estilo das imagens */
+.photo-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Garante que as imagens cubram o espaço sem distorção */
+  border-radius: 8px;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .photo-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Ajuste em telas menores */
+  }
+}
